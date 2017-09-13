@@ -1,4 +1,5 @@
 # Laravel-Relation
 
-1.configurasi database pada file .env
+1.one to one
+2.many to many
 	
