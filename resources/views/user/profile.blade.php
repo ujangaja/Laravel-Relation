@@ -1,0 +1,1 @@
+<h1>Halo{{ $user->nama }}</h1>
