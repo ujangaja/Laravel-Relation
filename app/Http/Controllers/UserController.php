@@ -1,8 +1,9 @@
 <?php
-
+/*ini nomor 1*/
 namespace App\Http\Controllers;
 
-use App\User;
+use App\Models\User;
+use App\Models\Passport;
 use Illuminate\Http\Request;
 
 class UserController extends Controller
@@ -44,9 +45,14 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function showProfile($id)
     {
          return view('user.profile', ['user' => User::findOrFail($id)]);
+    }
+
+    public function showPassport($id)
+    {
+         return view('user.passport', ['passport' => Passport::findOrFail($id)]);
     }
 
     /**

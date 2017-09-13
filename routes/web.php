@@ -16,4 +16,5 @@ Route::get('/', function () {
 });
 
 
-Route::get('user/{id}', 'UserController@show');
+Route::get('user/{id}', 'UserController@showProfile');/*1*/
+Route::get('passport/{id}', 'UserController@showPassport');/*1*/
