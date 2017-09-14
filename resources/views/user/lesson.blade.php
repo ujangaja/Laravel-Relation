@@ -7,3 +7,11 @@
 
 
 <h3>Jumlah Like: {{$lesson->likes->count()}}</h3>
+
+
+<h3>Daftar Tag</h3>
+<ul>
+@foreach($lesson->tags as $tag)
+	<li>{{ $tag->name}}</li>
+@endforeach
+</ul>

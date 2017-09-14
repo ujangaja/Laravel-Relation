@@ -10,4 +10,10 @@ class Forum extends Model
     {
     	return $this->belongsTo('App\Models\User');
     }
+
+    public function tags()
+	{
+    	return $this->morphToMany('App\Models\Tag','taggable');  
+	
+	}
 }

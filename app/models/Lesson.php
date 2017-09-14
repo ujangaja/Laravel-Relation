@@ -24,4 +24,11 @@ class Lesson extends Model
     	return $this->morphMany('App\Models\like','likeable');  
 	
 	}
+
+	public function tags()
+	{
+    	return $this->morphToMany('App\Models\Tag','taggable');  
+	
+	}
+
 }
