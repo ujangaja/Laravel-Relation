@@ -11,4 +11,17 @@ class Lesson extends Model
     	return $this->belongsToMany('App\Models\User');  
 	
 	}
+
+
+	public function forums()
+	{
+    	return $this->hasManyThrough('App\Models\Forum','App\Models\User');  
+	
+	}
+
+	public function likes()
+	{
+    	return $this->morphMany('App\Models\like','likeable');  
+	
+	}
 }
