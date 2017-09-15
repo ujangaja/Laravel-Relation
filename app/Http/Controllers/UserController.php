@@ -49,7 +49,7 @@ class UserController extends Controller
      */
     public function showProfile($id)
     {
-        $user = User::with('forums')->where('id', $id)->first();
+        $user = User::with('forums.tags','lessons')->where('id', $id)->first();
          return view('user.profile', ['user' => $user]);
     }
 

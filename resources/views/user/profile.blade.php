@@ -1,10 +1,15 @@
-{{-- <h1>Halo{{ $user->name }} || no.passportnya {{$user->passport->no_pass}}</h1> --}}
+<h1>Halo{{ $user->name }} || no.passportnya {{$user->passport->no_pass}}</h1>
 
 
 <h3>Daftar Forum</h3>
 <ul>
 @foreach($user->forums as $forum)
-	<li>{{ $forum->title}}</li>
+	<li>{{ $forum->title}}
+		|| Tag:  
+		@foreach($forum->tags as $tag)
+			{{$tag->name}}
+		@endforeach
+	</li>
 @endforeach
 </ul>
 
