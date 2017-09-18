@@ -119,6 +119,23 @@ class UserController extends Controller
         $user =User::find(1);
         $user->lessons()->detach(3);
     }
+
+    // update
+    public function updateLesson()
+    {
+        $user =User::find(1);
+        $attributes = ['data'=>'contoh'];
+        $user->lessons()->updateExistingPivot(2, $attributes);
+    }
+
+    // 
+
+    public function syncLesson()
+    {
+        $user =User::find(1);
+        $lists = [1,2];
+        $user->lessons()->sync($lists);
+    }
     /**
      * Remove the specified resource from storage.
      *
