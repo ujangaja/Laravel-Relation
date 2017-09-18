@@ -99,9 +99,13 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function updateForum()
     {
-        //
+        $forum = Forum::find(1);
+        $user = User::find(2);
+
+        $forum->user()->associate($user);
+        $forum->save();
     }
 
     /**
@@ -110,8 +114,11 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function deleteForum()
     {
-        //
+        $forum = Forum::find(1);
+
+        $forum->user()->dissociate();
+        $forum->save();
     }
 }

@@ -19,6 +19,12 @@ Route::get('/', function () {
 Route::get('user/{id}'		, 'UserController@showProfile');
 Route::get('lesson/{id}'	, 'UserController@showLesson');
 Route::get('passport/{id}'	, 'UserController@showPassport');
+
+// insert relation
 Route::get('forum/create'	, 'UserController@createForum');
+
+// update || delete relation
+Route::get('forum/update'	, 'UserController@updateForum');
+Route::get('forum/delete'	, 'UserController@deleteForum');
 
 Route::get('forum/{id}'	, 'UserController@showForum');
