@@ -108,6 +108,17 @@ class UserController extends Controller
         $forum->save();
     }
 
+    public function createLesson()
+    {
+        $user =User::find(1);
+        $user->lessons()->attach(3);
+    }
+
+    public function deleteLesson()
+    {
+        $user =User::find(1);
+        $user->lessons()->detach(3);
+    }
     /**
      * Remove the specified resource from storage.
      *

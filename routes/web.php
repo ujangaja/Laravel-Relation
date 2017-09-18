@@ -10,15 +10,20 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-
+// 
 Route::get('/', function () {
     return view('welcome');
 });
 
 
 Route::get('user/{id}'		, 'UserController@showProfile');
-Route::get('lesson/{id}'	, 'UserController@showLesson');
 Route::get('passport/{id}'	, 'UserController@showPassport');
+
+// many to many relationship
+Route::get('lesson/create'	, 'UserController@createLesson');
+Route::get('lesson/delete'	, 'UserController@deleteLesson');
+
+Route::get('lesson/{id}'	, 'UserController@showLesson');
 
 // insert relation
 Route::get('forum/create'	, 'UserController@createForum');
