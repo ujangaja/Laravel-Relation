@@ -69,6 +69,18 @@ class UserController extends Controller
          return view('user.forum', ['forum' => Forum::findOrFail($id)]);
     }
 
+
+    public function createForum()
+    {
+        $forum = new Forum(['title'=>'test Forum baru',
+                            'body'=>'body Forum baru',
+                            ]);
+
+        $user = User::find(2);
+
+         $user->forums()->save($forum);
+    }
+
     /**
      * Show the form for editing the specified resource.
      *

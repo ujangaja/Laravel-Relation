@@ -19,4 +19,6 @@ Route::get('/', function () {
 Route::get('user/{id}'		, 'UserController@showProfile');
 Route::get('lesson/{id}'	, 'UserController@showLesson');
 Route::get('passport/{id}'	, 'UserController@showPassport');
+Route::get('forum/create'	, 'UserController@createForum');
+
 Route::get('forum/{id}'	, 'UserController@showForum');
