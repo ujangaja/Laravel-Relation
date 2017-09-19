@@ -149,4 +149,13 @@ class UserController extends Controller
         $forum->user()->dissociate();
         $forum->save();
     }
+    
+
+    public function editPassport()
+    {
+        $passport = Passport::find(1);
+        $passport->no_pass = '1234';
+        $passport->save();
+    }
+
 }
